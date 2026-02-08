@@ -35,19 +35,32 @@ limitations under the License.
 
 > Return a string giving the literal bit representation of a [half-precision floating-point number][ieee754].
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/number-float16-base-to-binary-string
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import toBinaryString from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-binary-string@esm/index.mjs';
-```
-The previous example will load the latest bundled code from the esm branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/number-float16-base-to-binary-string/tags). For example,
-
-```javascript
-import toBinaryString from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-binary-string@v0.1.0-esm/index.mjs';
+var toBinaryString = require( '@stdlib/number-float16-base-to-binary-string' );
 ```
 
 #### toBinaryString( x )
@@ -55,7 +68,7 @@ import toBinaryString from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16
 Returns a string giving the literal bit representation of a [half-precision floating-point number][ieee754].
 
 ```javascript
-import toFloat16 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-float16@esm/index.mjs';
+var toFloat16 = require( '@stdlib/number-float64-base-to-float16' );
 
 var str = toBinaryString( toFloat16( 4.0 ) );
 // returns '0100010000000000'
@@ -70,7 +83,7 @@ str = toBinaryString( toFloat16( -1.0e3 ) );
 The function handles [subnormals][subnormals].
 
 ```javascript
-import toFloat16 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-float16@esm/index.mjs';
+var toFloat16 = require( '@stdlib/number-float64-base-to-float16' );
 
 var str = toBinaryString( toFloat16( -3.14e-6 ) );
 // returns '1000000000110101'
@@ -82,8 +95,8 @@ str = toBinaryString( toFloat16( 1.4e-7 ) );
 The function handles special values.
 
 ```javascript
-import PINF from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float16-pinf@esm/index.mjs';
-import NINF from 'https://cdn.jsdelivr.net/gh/stdlib-js/constants-float16-ninf@esm/index.mjs';
+var PINF = require( '@stdlib/constants-float16-pinf' );
+var NINF = require( '@stdlib/constants-float16-ninf' );
 
 var str = toBinaryString( 0.0 );
 // returns '0000000000000000'
@@ -111,17 +124,12 @@ str = toBinaryString( NINF );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="module">
-
-import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@esm/index.mjs';
-import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@esm/index.mjs';
-import pow from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-pow@esm/index.mjs';
-import float64ToFloat16 from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float64-base-to-float16@esm/index.mjs';
-import toBinaryString from 'https://cdn.jsdelivr.net/gh/stdlib-js/number-float16-base-to-binary-string@esm/index.mjs';
+```javascript
+var randu = require( '@stdlib/random-base-randu' );
+var round = require( '@stdlib/math-base-special-round' );
+var pow = require( '@stdlib/math-base-special-pow' );
+var float64ToFloat16 = require( '@stdlib/number-float64-base-to-float16' );
+var toBinaryString = require( '@stdlib/number-float16-base-to-binary-string' );
 
 var frac;
 var sign;
@@ -147,10 +155,6 @@ for ( i = 0; i < 100; i++ ) {
     b = toBinaryString( x );
     console.log( b );
 }
-
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -174,7 +178,7 @@ for ( i = 0; i < 100; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -204,8 +208,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [npm-image]: http://img.shields.io/npm/v/@stdlib/number-float16-base-to-binary-string.svg
 [npm-url]: https://npmjs.org/package/@stdlib/number-float16-base-to-binary-string
 
-[test-image]: https://github.com/stdlib-js/number-float16-base-to-binary-string/actions/workflows/test.yml/badge.svg?branch=v0.1.0
-[test-url]: https://github.com/stdlib-js/number-float16-base-to-binary-string/actions/workflows/test.yml?query=branch:v0.1.0
+[test-image]: https://github.com/stdlib-js/number-float16-base-to-binary-string/actions/workflows/test.yml/badge.svg?branch=v0.1.1
+[test-url]: https://github.com/stdlib-js/number-float16-base-to-binary-string/actions/workflows/test.yml?query=branch:v0.1.1
 
 [coverage-image]: https://img.shields.io/codecov/c/github/stdlib-js/number-float16-base-to-binary-string/main.svg
 [coverage-url]: https://codecov.io/github/stdlib-js/number-float16-base-to-binary-string?branch=main
